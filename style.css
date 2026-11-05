@@ -2,6 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: #090912;
+    color: white;
+    overflow-x: hidden;
 }
 
 /* GENERAL */
@@ -56,7 +64,7 @@ body {
     z-index: 2;
 }
 
-/* TAG */
+/*Correction debordement carte mobile*/
 
 .tag {
     display: inline-block;

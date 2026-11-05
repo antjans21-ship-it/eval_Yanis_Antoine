@@ -1,189 +1,209 @@
-
 * {
-
     margin: 0;
-    padding: 0; 
+    padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+/* GENERAL */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #24292f;
-    line-height: 1.6;
-}
-
-
-header {
-    background-color: #24292f;
+    font-family: 'Outfit', sans-serif;
+    background: #090912;
     color: white;
-    text-align: center;
-    padding: 30px 15px;
+    overflow-x: hidden;
 }
 
-header h1 {
-    font-size: 38px;
-    margin-bottom: 5px;
-}
+/* HERO */
 
-header p {
-    color: #c9d1d9;
-    margin-bottom: 20px;
-}
+.hero {
+    min-height: 100vh;
+    position: relative;
 
-
-nav {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
+    align-items: center;
+
+    padding: 80px 10%;
+
+    overflow: hidden;
+
+    background:
+        url('https://images.unsplash.com/photo-1506157786151-b8491531f063?w=2000')
+        center / cover no-repeat;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+/* OVERLAY */
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(9, 9, 18, 0.98) 0%,
+            rgba(9, 9, 18, 0.80) 55%,
+            rgba(9, 9, 18, 0.35) 100%
+        );
+
+    z-index: 1;
 }
 
-nav a:hover {
-    color: #58a6ff;
-}
+/* CONTENT */
 
-
-.accueil {
-    background-color: #e6f0fa;
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.accueil h2 {
-    font-size: 32px;
-    color: #0969da;
-    margin-bottom: 20px;
-}
-
-.accueil p {
+.content {
     max-width: 750px;
-    margin: auto;
-    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
 }
 
-.bouton {
+/* TAG */
+
+.tag {
     display: inline-block;
-    background-color: #0969da;
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 6px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.08);
+
+    padding: 10px 18px;
+    border-radius: 30px;
+
+    font-size: 13px;
+    letter-spacing: 2px;
+
+    color: #d8b4fe;
+
+    margin-bottom: 30px;
 }
 
-.bouton:hover {
-    background-color: #0550ae;
+/* TITLE */
+
+h1 {
+    font-size: clamp(55px, 9vw, 110px);
+
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
 }
 
-
-section {
-    padding: 55px 20px;
-    text-align: center;
+h1 span {
+    color: #c084fc;
 }
 
-section h2 {
-    color: #0969da;
-    margin-bottom: 25px;
+/* DESCRIPTION */
+
+.description {
+    max-width: 560px;
+
+    font-size: 19px;
+    line-height: 1.7;
+
+    color: #c4c4d4;
+
+    margin-bottom: 40px;
 }
 
+/* BUTTONS */
 
-.projet p {
-    max-width: 750px;
-    margin: 12px auto;
-}
-
-
-.membres {
+.buttons {
     display: flex;
-    justify-content: center;
+    gap: 18px;
     flex-wrap: wrap;
-    gap: 25px;
 }
 
-.carte {
-    background-color: white;
-    width: 300px;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
+.btn {
+    text-decoration: none;
 
-.carte h3 {
-    color: #0969da;
-    font-size: 24px;
-    margin-bottom: 10px; 
-}
-
-.etapes {
-    background-color: #e6f0fa;
-}
-
-.etape {
-    background-color: white;
-    max-width: 700px;
-    margin: 15px auto;
-    padding: 20px;
+    padding: 17px 30px;
     border-radius: 8px;
-    text-align: left;
-    border-left: 5px solid #0969da;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
 }
 
-.etape h3 {
-    color: #0969da;
-    margin-bottom: 8px;
-}
+/* PRIMARY BUTTON */
 
-
-.conclusion p {
-    max-width: 700px;
-    margin: auto;
-}
-
-
-footer {
-    background-color: #24292f;
+.btn-primary {
+    background: #a855f7;
     color: white;
-    text-align: center;
-    padding: 25px;
+
+    box-shadow: 0 0 30px rgba(168,85,247,0.3);
 }
 
+.btn-primary:hover {
+    background: #9333ea;
+    transform: translateY(-4px);
+}
 
-@media screen and (max-width: 600px) {
+/* SECONDARY BUTTON */
 
-    header h1 {
-        font-size: 30px;
+.btn-secondary {
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-4px);
+}
+
+/* FOOTER */
+
+.bottom-info {
+    position: absolute;
+
+    bottom: 40px;
+    left: 10%;
+    right: 10%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #aaaabd;
+
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    z-index: 2;
+}
+
+/* CREDITS */
+
+.credits strong {
+    color: #c084fc;
+    font-weight: 700;
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 650px) {
+
+    .hero {
+        padding: 60px 7%;
+
+        background-position: 60% center;
     }
 
-    nav {
+    h1 {
+        letter-spacing: -3px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .bottom-info {
+        left: 7%;
+        right: 7%;
+        bottom: 20px;
+
         flex-direction: column;
-        gap: 12px;
+        align-items: flex-start;
+
+        gap: 15px;
     }
 
-    .accueil {
-        padding: 50px 15px;
-    }
-
-    .accueil h2 {
-        font-size: 25px;
-    }
-
-    .membres {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .carte {
-        width: 100%;
-        max-width: 350px;
-    }
 }
